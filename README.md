@@ -63,7 +63,7 @@ print(report)
 
 ## Task-2 tools used-
 
-Jupyter note book where the A Jupyter notebook consists of a sequence of cells. The flow of a notebook is sequential. You enter code into an input cell, and when you run the cell, the notebook runs the code and prints the output of the computation to an output cell.
+Jupyter note book where a Jupyter notebook consists of a sequence of cells. The flow of a notebook is sequential. You enter code into an input cell, and when you run the cell, the notebook runs the code and prints the output of the computation to an output cell.
 
 ## Task-2 Explanation
 
