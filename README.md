@@ -62,6 +62,7 @@ print(report)
 '''
 
 ## Task-2 tools used-
+
 Jupyter note book where the A Jupyter notebook consists of a sequence of cells. The flow of a notebook is sequential. You enter code into an input cell, and when you run the cell, the notebook runs the code and prints the output of the computation to an output cell.
 
 ## Task-2 Explanation
@@ -69,6 +70,7 @@ Jupyter note book where the A Jupyter notebook consists of a sequence of cells. 
 The above code essentially reads the employee, department, and salary data from CSV files, merges them based on common columns, calculates the average salary for each department, sorts the departments in descending order of average salary, selects the top 3 departments, and generates a report displaying the department name and average monthly salary.
 
 ## Task-3 Debugging
+
 Given below is a Bash / Python script that performs following computation on an integer input (n):
 1.	If n is less than 10: Calculate its Square
   a.	Example: 4 => 16
