@@ -7,12 +7,13 @@ DEPT_NAME, AVG_MONTHLY_SALARY (USD)
 
 ## Task-1 Solution(Using PostGreSQL Syntax)
 
-SELECT d.NAME AS Dept_Name, AVG(s.AMT) AS Average_Monthly_Salary
+```SELECT d.NAME AS Dept_Name, AVG(s.AMT) AS Average_Monthly_Salary
 FROM DEPARTMENTS d, Salaries s, employees e
 where d.ID = e.DEPT_ID and e.ID = s.EMP_ID
 GROUP BY d.ID, d.NAME
 ORDER BY Average_Monthly_Salary DESC
-LIMIT 3;
+LIMIT 3;```
+
 ## Task 1 Tools used- 
 PostgreSQL
 
