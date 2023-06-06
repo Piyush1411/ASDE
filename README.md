@@ -80,43 +80,47 @@ Given below is a Bash / Python script that performs following computation on an 
 The task is to identify the bugs in the script, fix them and share the new script. Only one of the two scripts required Python. Hint: You can correct the script by only changing 3-4 characters.
 
 ### Script (Python)
-
+```python
 def compute(n):
-    if n < 10:                  // Square Calculation
+    if n < 10:                         ##### Square Calculation
         out = n ** 2
-    elif n < 20:                // Factorial Calculation
+    elif n < 20:                       ##### Factorial Calculation
         out = 1
-        for i in range(1, n-10):// last element should be n-10 not n-11
+        for i in range(1, n-10):       ##### last element should be n-10 not n-11
             out *= i
-    Else:                      // Sum Calculation
+    Else:                              ##### Sum Calculation
         lim = n - 20
-        out = lim * lim       // instead these 3 lines  
-        out = out - lim      // we can use sum function
-        out = out / 2 
+        out = lim * lim                ##### instead these 3 lines 
+        out = out - lim                ##### we can use 
+        out = out / 2                  ##### sum function
     print(out)
 
 n = int(input("Enter an integer: "))
 compute(n)
-
+```
 
 ### Correct Script (Python)
+```python
 def compute(n):
     if n < 10:
         out = n ** 2
     elif n < 20:
         out = 1
-        for i in range(1, n-10 +1):    // Fixed the range to include n - 10
+        for i in range(1, n-10 +1):    ##### Fixed the range to include n - 10
             out *= i
     else:
         lim = n - 20
-        out = sum(range(1, lim + 1))    // Changed the calculation  
-    print(out)                          // to sum of integers
+        out = sum(range(1, lim + 1))    ##### Changed the calculation to sum of integers
+    print(out)                          
 
 n = int(input("Enter an integer: "))
 compute(n)
+```
 
 ## Task-3 tools used-
+
 VS Code Editor the code is debugeed using python kernel provided by microsoft. By selecting a line and pressing F9 keyword the code, the breakpoint is defined in the code. this breakpoint of the code is debugged by pressing the play button.
+
 ## Task-3 Explanation
 
 1. In the factorial calculation, the range should include n - 10 to ensure the correct factorial calculation.
