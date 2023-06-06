@@ -1,3 +1,4 @@
+[ASDE Assignment.xlsx](https://github.com/Piyush1411/ASDE_Assignment/files/11660887/ASDE.Assignment.xlsx)
 # ASDE_Assignment
 ## Task-1 SQL
 Fetch top 3 departments along with their name and average monthly salary. Below is the format of the report.
