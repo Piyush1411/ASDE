@@ -24,6 +24,7 @@ PostgreSQL
 The SQL query you provided is used to fetch the top 3 departments along with their average monthly salary. It joins the Departments, Salaries, and employees tables based on the specified conditions (d.ID = e.DEPT_ID and e.ID = s.EMP_ID) and calculates the average salary for each department. The result is then sorted in descending order(DESC) of the average monthly salary and limited to the top 3 records using limit clause.
 
 ## Task-2 Scripting
+
 With the same attachment, use each worksheet as a CSV file and write a Python script that generates the same report. Data is to be read from the CSV files not from a database.
 
 ## Task-2 Solution
@@ -59,7 +60,8 @@ for index, row in top_departments.iterrows():
 
 #### Print the report
 print(report)
-'''
+##### end of pyhton file;
+```
 
 ## Task-2 tools used-
 
@@ -78,7 +80,7 @@ Given below is a Bash / Python script that performs following computation on an 
   a.	Example: 15 => 120
 3.	If n is greater than 20: Calculate the sum of all integers between 1 and (n-20)
   a.	Example: 25 => 15
-
+<
 The task is to identify the bugs in the script, fix them and share the new script. Only one of the two scripts required Python. Hint: You can correct the script by only changing 3-4 characters.
 
 ### Script (Python)
@@ -121,7 +123,7 @@ compute(n)
 
 ## Task-3 tools used-
 
-VS Code Editor the code is debugeed using python kernel provided by microsoft. By selecting a line and pressing F9 keyword the code, the breakpoint is defined in the code. this breakpoint of the code is debugged by pressing the play button.
+VS Code Editor the code is debugeed using python kernel provided by microsoft. By selecting a line and pressing F9 keyword on the selected line of the code, the breakpoint is defined in the code. This breakpoint of the code is debugged by pressing the play button.
 
 ## Task-3 Explanation
 
