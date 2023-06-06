@@ -7,12 +7,14 @@ DEPT_NAME, AVG_MONTHLY_SALARY (USD)
 
 ## Task-1 Solution(Using PostGreSQL Syntax)
 
-```SELECT d.NAME AS Dept_Name, AVG(s.AMT) AS Average_Monthly_Salary
+```sql 
+SELECT d.NAME AS Dept_Name, AVG(s.AMT) AS Average_Monthly_Salary
 FROM DEPARTMENTS d, Salaries s, employees e
 where d.ID = e.DEPT_ID and e.ID = s.EMP_ID
 GROUP BY d.ID, d.NAME
 ORDER BY Average_Monthly_Salary DESC
-LIMIT 3;```
+LIMIT 3; 
+```
 
 ## Task 1 Tools used- 
 PostgreSQL
@@ -25,35 +27,39 @@ The SQL query you provided is used to fetch the top 3 departments along with the
 With the same attachment, use each worksheet as a CSV file and write a Python script that generates the same report. Data is to be read from the CSV files not from a database.
 
 ## Task-2 Solution
+
+```python
+#### importing pandas package
 import pandas as pd
 
-# Read CSV files into pandas DataFrames
+#### Read CSV files into pandas DataFrames
 employees = pd.read_csv("filePath/EMPLOYEES.csv")
 departments = pd.read_csv("filePath/DEPARTMENTS.csv")
 salaries = pd.read_csv("filePath/SALARIES.csv")
 
-# Merge the DataFrames to get the necessary data
+#### Merge the DataFrames to get the necessary data
 merged_data = employees.merge(departments, left_on='DEPT_ID', right_on='DEPT_ID')
 merged_data = merged_data.merge(salaries, left_on='EMP_ID', right_on='EMP_ID')
 
-# Calculate average monthly salary for each department
+#### Calculate average monthly salary for each department
 average_salaries = merged_data.groupby(['DEPT_ID', 'DEPT_NAME'])['AMT (USD)'].mean().reset_index()
 
-# Sort departments based on average salary in descending order
+#### Sort departments based on average salary in descending order
 sorted_departments = average_salaries.sort_values('AMT (USD)', ascending=False)
 
-# Fetch top 3 departments
+#### Fetch top 3 departments
 top_departments = sorted_departments.head(3)
 
-# Generate report
+#### Generate report
 report = "Top 3 Departments by Average Monthly Salary:\n"
 for index, row in top_departments.iterrows():
     report += "Department Name: {}\n".format(row['DEPT_NAME'])
     report += "Average Monthly Salary: ${}\n".format(row['AMT (USD)'])
     report += "-------------------------\n"
 
-# Print the report
+#### Print the report
 print(report)
+'''
 
 ## Task-2 tools used-
 Jupyter note book where the A Jupyter notebook consists of a sequence of cells. The flow of a notebook is sequential. You enter code into an input cell, and when you run the cell, the notebook runs the code and prints the output of the computation to an output cell.
@@ -73,19 +79,19 @@ Given below is a Bash / Python script that performs following computation on an 
 
 The task is to identify the bugs in the script, fix them and share the new script. Only one of the two scripts required Python. Hint: You can correct the script by only changing 3-4 characters.
 
-# Script (Python)
+### Script (Python)
 
 def compute(n):
-    if n < 10:                     // Square Calculation
+    if n < 10:                  // Square Calculation
         out = n ** 2
-    elif n < 20:                  // Factorial Calculation
+    elif n < 20:                // Factorial Calculation
         out = 1
-        for i in range(1, n-10):  //last element should be n-10 not n-11
+        for i in range(1, n-10):// last element should be n-10 not n-11
             out *= i
-    Else:                        // Sum Calculation
+    Else:                      // Sum Calculation
         lim = n - 20
-        out = lim * lim          // instead these 3 lines  
-        out = out - lim          // we can use sum function
+        out = lim * lim       // instead these 3 lines  
+        out = out - lim      // we can use sum function
         out = out / 2 
     print(out)
 
@@ -93,18 +99,18 @@ n = int(input("Enter an integer: "))
 compute(n)
 
 
-# Correct Script (Python)
+### Correct Script (Python)
 def compute(n):
     if n < 10:
         out = n ** 2
     elif n < 20:
         out = 1
-        for i in range(1, n-10 +1):    # Fixed the range to include n - 10
+        for i in range(1, n-10 +1):    // Fixed the range to include n - 10
             out *= i
     else:
         lim = n - 20
-        out = sum(range(1, lim + 1))# Changed the calculation  
-    print(out)                      # to sum of integers
+        out = sum(range(1, lim + 1))    // Changed the calculation  
+    print(out)                          // to sum of integers
 
 n = int(input("Enter an integer: "))
 compute(n)
